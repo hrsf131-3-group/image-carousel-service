@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "bluebird": "^3.7.2",
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "mongoose": "^5.10.13",
