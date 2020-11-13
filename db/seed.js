@@ -1,8 +1,5 @@
 var db = require('./index.js');
 var faker = require('faker');
-var Promise = require('bluebird');
-
-Promise.promisifyAll(db.connection);
 
 var totalListings = 100;
 var photosPerListing = 20;
