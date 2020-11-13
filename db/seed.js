@@ -4,10 +4,10 @@ var Promise = require('bluebird');
 
 Promise.promisifyAll(db.connection);
 
-var totalListings = 10;
-var photosPerListing = 2;
-var totalUsers = 10;
-var totalCategories = 10;
+var totalListings = 100;
+var photosPerListing = 20;
+var totalUsers = 100;
+var totalCategories = 50;
 
 var seedPhotos = (n) => {
   db.connection.queryAsync('DELETE FROM photos')
@@ -24,7 +24,7 @@ var seedPhotos = (n) => {
       return db.connection.queryAsync(query, [values]);
     })
     .then(() => {
-      console.log('successfully created');
+      console.log('successfully added photos');
     })
     .catch((err) => {
       console.log(err);
@@ -42,7 +42,7 @@ var seedListings = (n) => {
       return db.connection.queryAsync(query, [values]);
     })
     .then(() => {
-      console.log('successfully created');
+      console.log('successfully added listings');
       seedPhotos(totalListings * photosPerListing);
     })
     .catch((err) => {
@@ -65,7 +65,7 @@ var seedFavListings = (n) => {
       return db.connection.queryAsync(query, [values]);
     })
     .then(() => {
-      console.log('successfully created');
+      console.log('successfully added fav listings');
     })
     .catch((err) => {
       console.log(err);
@@ -85,7 +85,7 @@ var seedFavCategories = (n) => {
       return db.connection.queryAsync(query, [values]);
     })
     .then(() => {
-      console.log('successfully created');
+      console.log('successfully added fav categories');
       seedFavListings(totalListings * totalCategories);
     })
     .catch((err) => {
@@ -107,7 +107,7 @@ var seedUsers = (n) => {
       return db.connection.queryAsync(query, [values]);
     })
     .then(() => {
-      console.log('successfully created');
+      console.log('successfully added users');
       seedFavCategories(totalCategories);
     })
     .catch((err) => {
