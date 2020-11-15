@@ -3,6 +3,9 @@ var bodyParser = require('body-parser');
 var app = express();
 var controller = require('./controller');
 
+var publicDirectory = __dirname + '/../client/dist';
+
+app.use(express.static(publicDirectory));
 app.use(bodyParser.json());
 
 app.get('/api/listings/:id/photos', controller.getPhotos);
