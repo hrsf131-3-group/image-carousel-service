@@ -1,17 +1,35 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "image_carousel",
+  "version": "1.0.0",
+  "description": "image carousel for airbnb FEC",
   "author": "",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "start": "nodemon server/index.js",
+    "react-dev": "webpack -d --watch",
+    "seed": "node db/seed.js"
   },
   "dependencies": {
+    "axios": "^0.21.0",
+    "bluebird": "^3.7.2",
+    "express": "^4.17.1",
+    "faker": "^5.1.0",
+    "mongoose": "^5.10.13",
+    "mysql": "^2.18.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "sequelize": "^6.3.5",
+    "webpack": "^5.4.0"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "babel-loader": "^8.2.1",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "webpack-cli": "^4.2.0"
   }
 }
