@@ -5,4 +5,10 @@ var getPhotos = (id) => {
   return db.connection.queryAsync(query);
 };
 
+var getCategories = (id) => {
+  var query = `select * from fav_categories where user_id = ${id}`;
+  return db.connection.queryAsync(query);
+};
+
 module.exports.getPhotos = getPhotos;
+module.exports.getCategories = getCategories;
