@@ -17,26 +17,26 @@ var getCategories = (req, res) => {
   var promise1 = model.getCategories(id);
   var promise2 = model.checkIfListingIsFav(id);
   Promise.all([promise1, promise2])
-    .then((response) => {
+    .then((promiseResponse) => {
       var isFav = false;
-      for (var i = 0; i < response[1].length; i++) {
-        if (listingId === response[1][i]['listing_id']) {
+      for (var i = 0; i < promiseResponse[1].length; i++) {
+        if (listingId === promiseResponse[1][i]['listing_id']) {
           isFav = true;
         }
       }
-      var obj = {};
-      obj['listing_id'] = listingId;
-      obj['user_id'] = id;
-      obj['is_favorite'] = isFav;
-      obj['fav_categories'] = [];
-      for (var i = 0; i < response[0].length; i++) {
-        var obj1 = {
-          id: response[0][i].id,
-          name: response[0][i].name
+      var responseObj = {};
+      responseObj['listing_id'] = listingId;
+      responseObj['user_id'] = id;
+      responseObj['is_favorite'] = isFav;
+      responseObj['fav_categories'] = [];
+      for (var i = 0; i < promiseResponse[0].length; i++) {
+        var categoryDetail = {
+          id: promiseResponse[0][i].id,
+          name: promiseResponse[0][i].name
         };
-        obj['fav_categories'].push(obj1);
+        responseObj['fav_categories'].push(categoryDetail);
       }
-      res.json(obj);
+      res.json(responseObj);
     })
     .catch((err) => {
       res.sendStatus(404);
