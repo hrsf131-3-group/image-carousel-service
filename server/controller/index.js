@@ -47,7 +47,7 @@ var getListing = (req, res) => {
   var id = req.params.id;
   model.getListing(id)
     .then((response) => {
-      res.json(response);
+      res.json(response[0]);
     })
     .catch((err) => {
       res.sendStatus(404);

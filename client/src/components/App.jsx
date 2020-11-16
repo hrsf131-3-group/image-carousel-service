@@ -20,6 +20,13 @@ class App extends React.Component {
       .catch((err) => {
         console.log(err);
       });
+    axios.get('/api/listings/4')
+      .then((response) => {
+        this.setState({title: response.data.name});
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   render () {
