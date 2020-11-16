@@ -13,14 +13,16 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/listings/4/photos')
+    // generating random id to get a different listing
+    var id = Math.floor(Math.random() * 100) + 1;
+    axios.get(`/api/listings/${id}/photos`)
       .then((response) => {
         this.setState({images: response.data});
       })
       .catch((err) => {
         console.log(err);
       });
-    axios.get('/api/listings/4')
+    axios.get(`/api/listings/${id}`)
       .then((response) => {
         this.setState({title: response.data.name});
       })
