@@ -1,12 +1,14 @@
 import React from 'react';
-import Images from './Images.jsx';
 import axios from 'axios';
+import Images from './Images.jsx';
+import Title from './Title.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: []
+      images: [],
+      title: ''
     };
   }
 
@@ -23,6 +25,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
+        <Title title = {this.state.title}/>
         <Images images = {this.state.images}/>
       </div>
     );

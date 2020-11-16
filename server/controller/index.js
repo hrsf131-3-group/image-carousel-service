@@ -43,5 +43,17 @@ var getCategories = (req, res) => {
     });
 };
 
+var getListing = (req, res) => {
+  var id = req.params.id;
+  model.getListing(id)
+    .then((response) => {
+      res.json(response);
+    })
+    .catch((err) => {
+      res.sendStatus(404);
+    });
+};
+
 module.exports.getPhotos = getPhotos;
 module.exports.getCategories = getCategories;
+module.exports.getListing = getListing;

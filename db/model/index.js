@@ -15,6 +15,12 @@ var checkIfListingIsFav = (id) => {
   return db.connection.queryAsync(query);
 };
 
+var getListing = (id) => {
+  var query = `select * from listings where id = ${id}`;
+  return db.connection.queryAsync(query);
+};
+
 module.exports.getPhotos = getPhotos;
+module.exports.getListing = getListing;
 module.exports.getCategories = getCategories;
 module.exports.checkIfListingIsFav = checkIfListingIsFav;
