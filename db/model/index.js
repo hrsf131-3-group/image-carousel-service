@@ -10,5 +10,11 @@ var getCategories = (id) => {
   return db.connection.queryAsync(query);
 };
 
+var checkIfListingIsFav = (id) => {
+  var query = `select listing_id from fav_listings where fav_category_id IN (select id from fav_categories where user_id = ${id})`;
+  return db.connection.queryAsync(query);
+};
+
 module.exports.getPhotos = getPhotos;
 module.exports.getCategories = getCategories;
+module.exports.checkIfListingIsFav = checkIfListingIsFav;
