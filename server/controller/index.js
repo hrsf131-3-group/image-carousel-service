@@ -11,4 +11,9 @@ var getPhotos = (req, res) => {
     });
 };
 
+// var getCategories = (req, res) => {
+
+// };
+
 module.exports.getPhotos = getPhotos;
+// module.exports.getCategories = getCategories;
