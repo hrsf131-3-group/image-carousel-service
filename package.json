@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "nodemon server/index.js",
-    "react-dev": "webpack -d --watch",
+    "react-dev": "webpack --watch",
     "seed": "node db/seed.js",
     "test": "jest"
   },
@@ -21,9 +21,9 @@
     "mongoose": "^5.10.13",
     "mysql": "^2.18.1",
     "react": "^16.8.6",
-    "react-dom": "^17.0.1",
+    "react-dom": "^16.8.6",
     "sequelize": "^6.3.5",
-    "webpack": "^2.7.0"
+    "webpack": "^4.41.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
