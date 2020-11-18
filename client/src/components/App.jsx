@@ -13,11 +13,15 @@ class App extends React.Component {
       showImageCarousel: false
     };
     this.onClickImage = this.onClickImage.bind(this);
+    this.onClickClose = this.onClickClose.bind(this);
   }
 
   onClickImage() {
-    console.log('clicked');
     this.setState({showImageCarousel: true});
+  }
+
+  onClickClose() {
+    this.setState({showImageCarousel: false});
   }
 
   componentDidMount() {
@@ -44,7 +48,7 @@ class App extends React.Component {
       <div>
         <Title title = {this.state.title} />
         {this.state.images.length !== 0 ? <Images images = {this.state.images} onClickImage = {this.onClickImage} /> : null}
-        {this.state.showImageCarousel ? <ImageCarousel images = {this.state.images}/> : null}
+        {this.state.showImageCarousel ? <ImageCarousel images = {this.state.images} onClickClose = {this.onClickClose}/> : null}
       </div>
     );
   }

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 var ImageCarousel = (props) => {
   return (
     <ImageCarouselContainer>
-      <Div><button>X Close</button></Div>
+      <Div><button onClick = {props.onClickClose}>X Close</button></Div>
       <Div><span>1/33</span></Div>
       <Div><button>Share</button><button>Fav</button></Div>
       <Div><button>Go Left</button></Div>
