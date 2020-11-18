@@ -6,7 +6,7 @@ var ImageCarousel = (props) => {
     <ImageCarouselContainer>
       <Div><button onClick = {props.onClickClose}>X Close</button></Div>
       <Div><span>1/33</span></Div>
-      <Div><button>Share</button><button>Fav</button></Div>
+      <Div><button>Share</button><button onClick = {props.onClickFav}>Fav</button></Div>
       <Div><button>Go Left</button></Div>
       <ImgDiv>
         {props.images.slice(0, 1).map((image, index) =>

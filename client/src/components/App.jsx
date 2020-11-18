@@ -3,6 +3,7 @@ import axios from 'axios';
 import Images from './Images.jsx';
 import Title from './Title.jsx';
 import ImageCarousel from './ImageCarousel.jsx';
+import FavoriteCategory from './FavoriteCategory.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,10 +11,13 @@ class App extends React.Component {
     this.state = {
       images: [],
       title: '',
-      showImageCarousel: false
+      showImageCarousel: false,
+      showFavCategory: false
     };
     this.onClickImage = this.onClickImage.bind(this);
     this.onClickClose = this.onClickClose.bind(this);
+    this.onClickFav = this.onClickFav.bind(this);
+    this.onClickDone = this.onClickDone.bind(this);
   }
 
   onClickImage() {
@@ -22,6 +26,14 @@ class App extends React.Component {
 
   onClickClose() {
     this.setState({showImageCarousel: false});
+  }
+
+  onClickFav() {
+    this.setState({showFavCategory: true});
+  }
+
+  onClickDone() {
+    this.setState({showFavCategory: false});
   }
 
   componentDidMount() {
@@ -48,7 +60,8 @@ class App extends React.Component {
       <div>
         <Title title = {this.state.title} />
         {this.state.images.length !== 0 ? <Images images = {this.state.images} onClickImage = {this.onClickImage} /> : null}
-        {this.state.showImageCarousel ? <ImageCarousel images = {this.state.images} onClickClose = {this.onClickClose}/> : null}
+        {this.state.showImageCarousel ? <ImageCarousel images = {this.state.images} onClickClose = {this.onClickClose} onClickFav = {this.onClickFav}/> : null}
+        {this.state.showFavCategory ? <FavoriteCategory onClickDone = {this.onClickDone}/> : null}
       </div>
     );
   }
