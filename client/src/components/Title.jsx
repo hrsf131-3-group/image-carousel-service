@@ -1,13 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
+
 
 var Title = (props) => {
   return (
     <div>
-      <h2>
+      <TitleHeading>
         {props.title}
-      </h2>
+      </TitleHeading>
     </div>
   );
 };
+
+var TitleHeading = styled.h2`
+  margin-left: 20%;;
+`;
 
 export default Title;
