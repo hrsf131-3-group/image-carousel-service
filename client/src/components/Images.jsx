@@ -22,7 +22,7 @@ var ImageGrid = styled.div`
   margin: auto;
   height: 520px;
   overflow: hidden;
-  border-radius: 25px;
+  border-radius: 12px;
 `;
 
 var Img1 = styled.img`

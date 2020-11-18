@@ -29,7 +29,6 @@ var ImageCarouselContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
   grid-template-rows: 1fr 8fr;
-  grid-gap: 10px;
 `;
 
 var Img = styled.img`
