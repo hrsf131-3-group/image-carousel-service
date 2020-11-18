@@ -25,9 +25,8 @@ var FavoriteCategoryContainer = styled.div`
 
 var ModalContainer = styled.div`
   position: absolute;
-  top: 30%;
-  left: 35%;
-  z-index: 3;
+  top: calc(50% - 360px/2);
+  left: calc(50% - 570px/2);
   background-color: white;
   width: 570px;
   height: 360px;
