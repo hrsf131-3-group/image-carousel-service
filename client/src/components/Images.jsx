@@ -18,16 +18,22 @@ var Images = (props) => {
 
 var ImageGrid = styled.div`
   display: grid;
-  grid-template-columns: 50% 25% 25%;
-  grid-template-rows: 50% 50%;
-  border: solid black 5px;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 8px;
+  width: 60%;
+  margin: auto;
+  height: 520px;
+  overflow: hidden;
+  border-radius: 25px;
 `;
 
 var Img1 = styled.img`
   grid-area: 1 / 1 / 3 / 2;
   object-fit: cover;
+  height: 100%;
   width: 100%;
-  max-height: 100%;
+  overflow: hidden;
 `;
 
 var Img2 = styled(Img1)`
