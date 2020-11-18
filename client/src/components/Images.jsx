@@ -4,14 +4,11 @@ import styled from 'styled-components';
 var Images = (props) => {
   return (
     <ImageGrid>
-      {/* {props.images.map((image, index) =>
-        <img src = {image.url} key = {index}/>
-      )} */}
-      <Img1 className = 'image1' src = 'https://a0.muscache.com/im/pictures/670af320-c060-4225-ac73-1e8cde40752c.jpg?im_w=1200'/>
-      <Img2 className = 'image2' src = 'https://a0.muscache.com/im/pictures/670af320-c060-4225-ac73-1e8cde40752c.jpg?im_w=1200'/>
-      <Img3 className = 'image3' src = 'https://a0.muscache.com/im/pictures/670af320-c060-4225-ac73-1e8cde40752c.jpg?im_w=1200'/>
-      <Img4 className = 'image4' src = 'https://a0.muscache.com/im/pictures/670af320-c060-4225-ac73-1e8cde40752c.jpg?im_w=1200'/>
-      <Img5 className = 'image5' src = 'https://a0.muscache.com/im/pictures/670af320-c060-4225-ac73-1e8cde40752c.jpg?im_w=1200'/>
+      <Img1 src = {props.images[0].url} onClick = {props.onClickImage}/>
+      <Img2 src = {props.images[1].url} onClick = {props.onClickImage}/>
+      <Img3 src = {props.images[2].url} onClick = {props.onClickImage}/>
+      <Img4 src = {props.images[3].url} onClick = {props.onClickImage}/>
+      <Img5 src = {props.images[4].url} onClick = {props.onClickImage}/>
     </ImageGrid>
   );
 };
