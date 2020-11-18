@@ -29,11 +29,18 @@ var ImageGrid = styled.div`
 `;
 
 var Img1 = styled.img`
+& {
   grid-area: 1 / 1 / 3 / 2;
   object-fit: cover;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  filter: brightness(100%);
+}
+&:hover {
+  cursor: pointer;
+  filter: brightness(85%);
+  transition: all 0.3s ease;
+}
 `;
 
 var Img2 = styled(Img1)`
