@@ -4,16 +4,16 @@ import styled from 'styled-components';
 var ImageCarousel = (props) => {
   return (
     <ImageCarouselContainer>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <Div><button>X Close</button></Div>
+      <Div><span>1/33</span></Div>
+      <Div><button>Share</button><button>Fav</button></Div>
+      <Div><button>Go Left</button></Div>
       <ImgDiv>
         {props.images.slice(0, 1).map((image, index) =>
           <Img src = {image.url} key = {index}/>
         )}
       </ImgDiv>
-      <div></div>
+      <Div><button>Go Right</button></Div>
     </ImageCarouselContainer>
   );
 };
@@ -27,7 +27,7 @@ var ImageCarouselContainer = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 10fr 1fr;
   grid-template-rows: 1fr 8fr;
   grid-gap: 10px;
 `;
@@ -39,8 +39,15 @@ var Img = styled.img`
 `;
 
 var ImgDiv = styled.div`
-  text-align: center;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
+`;
+
+var Div = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default ImageCarousel;
