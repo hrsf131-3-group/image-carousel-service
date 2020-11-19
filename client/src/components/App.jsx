@@ -23,8 +23,8 @@ class App extends React.Component {
     this.goLeft = this.goLeft.bind(this);
   }
 
-  onClickImage() {
-    this.setState({showImageCarousel: true});
+  onClickImage(index) {
+    this.setState({showImageCarousel: true, currentIndex: index});
   }
 
   onClickClose() {

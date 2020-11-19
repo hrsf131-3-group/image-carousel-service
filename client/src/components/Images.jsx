@@ -4,11 +4,11 @@ import styled from 'styled-components';
 var Images = (props) => {
   return (
     <ImageGrid>
-      <Img1 src = {props.images[0].url} onClick = {props.onClickImage}/>
-      <Img2 src = {props.images[1].url} onClick = {props.onClickImage}/>
-      <Img3 src = {props.images[2].url} onClick = {props.onClickImage}/>
-      <Img4 src = {props.images[3].url} onClick = {props.onClickImage}/>
-      <Img5 src = {props.images[4].url} onClick = {props.onClickImage}/>
+      <Img1 src = {props.images[0].url} onClick = {() => props.onClickImage(0)}/>
+      <Img2 src = {props.images[1].url} onClick = {() => props.onClickImage(1)}/>
+      <Img3 src = {props.images[2].url} onClick = {() => props.onClickImage(2)}/>
+      <Img4 src = {props.images[3].url} onClick = {() => props.onClickImage(3)}/>
+      <Img5 src = {props.images[4].url} onClick = {() => props.onClickImage(4)}/>
     </ImageGrid>
   );
 };
