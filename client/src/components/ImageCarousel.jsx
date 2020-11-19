@@ -8,7 +8,7 @@ var ImageCarousel = (props) => {
         <CloseButton onClick = {props.onClickClose}>X Close</CloseButton>
       </Div>
       <Div>
-        <span>{props.currentIndex + 1} / {props.images.length}</span>
+        <Span>{props.currentIndex + 1} / {props.images.length}</Span>
       </Div>
       <Div>
         <Button>
@@ -19,13 +19,13 @@ var ImageCarousel = (props) => {
         </Button>
       </Div>
       <Div>
-        {props.currentIndex !== 0 ? <NavArrowButton onClick = {props.goLeft}><NavArrow xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false"><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" fill-rule="evenodd"/></NavArrow></NavArrowButton> : null}
+        {props.currentIndex !== 0 ? <NavArrowButton onClick = {props.goLeft}><NavArrow xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false"><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" fillRule="evenodd"/></NavArrow></NavArrowButton> : null}
       </Div>
       <ImgDiv>
         <Img src = {props.images[props.currentIndex].url}/>
       </ImgDiv>
       <Div>
-        {props.currentIndex !== props.images.length - 1 ? <NavArrowButton onClick = {props.goRight}><NavArrow xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false"><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fill-rule="evenodd"/></NavArrow></NavArrowButton> : null}
+        {props.currentIndex !== props.images.length - 1 ? <NavArrowButton onClick = {props.goRight}><NavArrow xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false"><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fillRule="evenodd"/></NavArrow></NavArrowButton> : null}
       </Div>
     </ImageCarouselContainer>
   );
@@ -86,6 +86,7 @@ var Heart = styled.svg`
 var Button = styled.button`
   border: none;
   background: none;
+  outline:none;
 `;
 
 var CloseButton = styled(Button)`
@@ -93,6 +94,8 @@ var CloseButton = styled(Button)`
   border-radius: 8px;
   background-color: rgba(34, 34, 34, 0.1);
   padding: 8px 16px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-weight: 500;
 }
 &:hover {
   cursor: pointer;
@@ -117,6 +120,11 @@ var NavArrowButton = styled(Button)`
   cursor: pointer;
   background-color: rgba(34, 34, 34, 0.04);
 }
+`;
+
+var Span = styled.span`
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-weight: 300;
 `;
 
 export default ImageCarousel;
