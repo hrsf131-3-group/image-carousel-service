@@ -82,7 +82,8 @@ var CloseButton = styled.button`
 `;
 
 var Span = styled.span`
-  margin: auto;
+  margin-left: 193px;
+  font-weight: 600;
 `;
 
 var DoneDiv = styled.div`
@@ -101,6 +102,7 @@ var DoneButton = styled.button`
     outline: none;
     color: white;
     margin-right: 20px;
+    font-size: medium;
   }
   &:hover {
     cursor: pointer;
@@ -122,7 +124,8 @@ var ListItemDiv = styled.div`
   display: flex;
   align-items: center;
   border-radius: 8px;
-  padding: 12px
+  padding: 12px;
+  font-weight: 500;
 }
 &:hover {
   cursor: pointer;
