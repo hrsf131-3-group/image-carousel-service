@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 var ImageCarousel = (props) => {
   return (
@@ -32,6 +32,11 @@ var ImageCarousel = (props) => {
   );
 };
 
+var Appear = keyframes`
+  0% { top: 100%; opacity: 0; }
+  100% { top: 0; opacity: 1;}
+`;
+
 var ImageCarouselContainer = styled.div`
   position: absolute;
   left: 0px;
@@ -44,6 +49,8 @@ var ImageCarouselContainer = styled.div`
   grid-template-columns: 1fr 10fr 1fr;
   grid-template-rows: 1fr 8fr;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  animation-fill-mode: forwards;
+  animation: ${Appear} 0.5s;
 `;
 
 var ImgDiv = styled.div`
