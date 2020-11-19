@@ -23,6 +23,7 @@ var ImageCarousel = (props) => {
       </Div>
       <ImgDiv>
         <Img src = {props.images[props.currentIndex].url}/>
+        <span>{props.images[props.currentIndex].description}</span>
       </ImgDiv>
       <Div>
         {props.currentIndex !== props.images.length - 1 ? <NavArrowButton onClick = {props.goRight}><NavArrow xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false"><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fillRule="evenodd"/></NavArrow></NavArrowButton> : null}
@@ -47,15 +48,16 @@ var ImageCarouselContainer = styled.div`
 
 var ImgDiv = styled.div`
   display: flex;
-  justify-content: center;
   overflow: hidden;
+  flex-direction: column;
+  align-items: center;
 `;
 
 var Img = styled.img`
   object-fit: cover;
   max-height: 80%;
   max-width: 100%;
-  transition: all 3s ease;
+  margin-bottom: 30px;
 `;
 
 var Div = styled.div`
