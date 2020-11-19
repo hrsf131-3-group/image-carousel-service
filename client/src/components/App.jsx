@@ -12,12 +12,15 @@ class App extends React.Component {
       images: [],
       title: '',
       showImageCarousel: false,
-      showFavCategory: false
+      showFavCategory: false,
+      currentIndex: 0
     };
     this.onClickImage = this.onClickImage.bind(this);
     this.onClickClose = this.onClickClose.bind(this);
     this.onClickFav = this.onClickFav.bind(this);
     this.onClickDone = this.onClickDone.bind(this);
+    this.goRight = this.goRight.bind(this);
+    this.goLeft = this.goLeft.bind(this);
   }
 
   onClickImage() {
@@ -34,6 +37,14 @@ class App extends React.Component {
 
   onClickDone() {
     this.setState({showFavCategory: false});
+  }
+
+  goRight() {
+    this.setState({currentIndex: ++this.state.currentIndex});
+  }
+
+  goLeft() {
+    this.setState({currentIndex: --this.state.currentIndex});
   }
 
   componentDidMount() {
@@ -60,7 +71,7 @@ class App extends React.Component {
       <div>
         <Title title = {this.state.title} />
         {this.state.images.length !== 0 ? <Images images = {this.state.images} onClickImage = {this.onClickImage} /> : null}
-        {this.state.showImageCarousel ? <ImageCarousel images = {this.state.images} onClickClose = {this.onClickClose} onClickFav = {this.onClickFav}/> : null}
+        {this.state.showImageCarousel ? <ImageCarousel image = {this.state.images[this.state.currentIndex]} onClickClose = {this.onClickClose} onClickFav = {this.onClickFav} goRight = {this.goRight} goLeft = {this.goLeft}/> : null}
         {this.state.showFavCategory ? <FavoriteCategory onClickDone = {this.onClickDone}/> : null}
       </div>
     );

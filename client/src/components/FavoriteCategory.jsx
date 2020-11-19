@@ -5,9 +5,9 @@ var FavoriteCategory = (props) => {
   return (
     <FavoriteCategoryContainer>
       <ModalContainer>
-        <h3>Save to a list</h3>
+        <Div><CloseButton onClick = {props.onClickDone}>x</CloseButton><Span>Save to a list</Span></Div>
         <div><button>Create a new list</button></div>
-        <div><button onClick = {props.onClickDone}>Done</button></div>
+        <Div><Done onClick = {props.onClickDone}>Done</Done></Div>
       </ModalContainer>
     </FavoriteCategoryContainer>
   );
@@ -29,9 +29,28 @@ var ModalContainer = styled.div`
   left: calc(50% - 570px/2);
   background-color: white;
   width: 570px;
-  height: 360px;
+  max-height: 900px;
   text-align: center;
   border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 64px 1fr 80px;
+`;
+
+var Div = styled.div`
+ display: flex;
+`;
+
+var CloseButton = styled.button`
+  justify-content: flex-start;
+`;
+
+var Span = styled.span`
+  justify-self: center;
+`;
+
+var Done = styled.button`
+  justify-self: flex-end;
 `;
 
 export default FavoriteCategory;

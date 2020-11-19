@@ -7,13 +7,11 @@ var ImageCarousel = (props) => {
       <Div><button onClick = {props.onClickClose}>X Close</button></Div>
       <Div><span>1/33</span></Div>
       <Div><button>Share</button><button onClick = {props.onClickFav}>Fav</button></Div>
-      <Div><button>Go Left</button></Div>
+      <Div><button onClick = {props.goLeft}>Go Left</button></Div>
       <ImgDiv>
-        {props.images.slice(0, 1).map((image, index) =>
-          <Img src = {image.url} key = {index}/>
-        )}
+        <Img src = {props.image.url}/>
       </ImgDiv>
-      <Div><button>Go Right</button></Div>
+      <Div><button onClick = {props.goRight}>Go Right</button></Div>
     </ImageCarouselContainer>
   );
 };
@@ -31,16 +29,16 @@ var ImageCarouselContainer = styled.div`
   grid-template-rows: 1fr 8fr;
 `;
 
-var Img = styled.img`
-  object-fit: cover;
-  max-height: 80%;
-  max-width: 100%;
-`;
-
 var ImgDiv = styled.div`
   display: flex;
   justify-content: center;
   overflow: hidden;
+`;
+
+var Img = styled.img`
+  object-fit: cover;
+  max-height: 80%;
+  max-width: 100%;
 `;
 
 var Div = styled.div`
