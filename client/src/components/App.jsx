@@ -15,7 +15,8 @@ class App extends React.Component {
       showFavCategory: false,
       currentIndex: 0,
       // generating random id to get a different listing
-      listingId: Math.floor(Math.random() * 100) + 1
+      listingId: Math.floor(Math.random() * 100) + 1,
+      favCategories: []
     };
     this.onClickImage = this.onClickImage.bind(this);
     this.onClickClose = this.onClickClose.bind(this);
@@ -34,9 +35,14 @@ class App extends React.Component {
   }
 
   onClickFav() {
-    axios.get('/api/users/5/fav_categories')
+    axios.get('/api/users/16/fav_categories', {
+      params: {
+        'listing_id': this.state.listingId
+      }
+    })
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data.fav_categories);
+        this.setState({favCategories: response.data.fav_categories});
       })
       .catch((err) => {
         console.log(err);
@@ -82,7 +88,7 @@ class App extends React.Component {
 
         {this.state.showImageCarousel ? <ImageCarousel onClickClose = {this.onClickClose} onClickFav = {this.onClickFav} goRight = {this.goRight} goLeft = {this.goLeft} currentIndex = {this.state.currentIndex} images = {this.state.images}/> : null}
 
-        {this.state.showFavCategory ? <FavoriteCategory onClickDone = {this.onClickDone}/> : null}
+        {this.state.showFavCategory ? <FavoriteCategory onClickDone = {this.onClickDone} favCategories = {this.state.favCategories}/> : null}
       </div>
     );
   }

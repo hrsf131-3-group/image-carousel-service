@@ -13,7 +13,7 @@ var getPhotos = (req, res) => {
 
 var getCategories = (req, res) => {
   var id = parseInt(req.params.id);
-  var listingId = parseInt(req.query.listingId);
+  var listingId = parseInt(req.query.listing_id);
   var promise1 = model.getCategories(id);
   var promise2 = model.checkIfListingIsFav(id);
   Promise.all([promise1, promise2])

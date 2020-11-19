@@ -18,6 +18,14 @@ var FavoriteCategory = (props) => {
             </NewListButton>
             <span>Create a new list</span>
           </ListItemDiv>
+          {props.favCategories.map((favCategory, index) =>
+            <ListItemDiv key = {index}>
+              <NewListButton>
+                <PlusSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false"><path d="M28,17H17V28H15V17H4V15H15V4h2V15H28Z"/></PlusSvg>
+              </NewListButton>
+              <span>{favCategory.name}</span>
+            </ListItemDiv>
+          )}
         </ContentDiv>
         <DoneDiv>
           <DoneButton onClick = {props.onClickDone}>Done</DoneButton>
@@ -106,12 +114,20 @@ var NewListButton = styled(DoneButton)`
 `;
 
 var ContentDiv = styled.div`
-    margin: 30px;
+  margin: 18px;
 `;
 
 var ListItemDiv = styled.div`
+& {
   display: flex;
   align-items: center;
+  border-radius: 8px;
+  padding: 12px
+}
+&:hover {
+  cursor: pointer;
+  background-color: rgb(247, 247, 247);
+}
 `;
 
 var CrossSvg = styled.svg`
