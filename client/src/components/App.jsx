@@ -13,7 +13,9 @@ class App extends React.Component {
       title: '',
       showImageCarousel: false,
       showFavCategory: false,
-      currentIndex: 0
+      currentIndex: 0,
+      // generating random id to get a different listing
+      listingId: Math.floor(Math.random() * 100) + 1
     };
     this.onClickImage = this.onClickImage.bind(this);
     this.onClickClose = this.onClickClose.bind(this);
@@ -32,6 +34,13 @@ class App extends React.Component {
   }
 
   onClickFav() {
+    axios.get('/api/users/5/fav_categories')
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     this.setState({showFavCategory: true});
   }
 
@@ -48,16 +57,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // generating random id to get a different listing
-    var id = Math.floor(Math.random() * 100) + 1;
-    axios.get(`/api/listings/${id}/photos`)
+    axios.get(`/api/listings/${this.state.listingId}/photos`)
       .then((response) => {
         this.setState({images: response.data});
       })
       .catch((err) => {
         console.log(err);
       });
-    axios.get(`/api/listings/${id}`)
+    axios.get(`/api/listings/${this.state.listingId}`)
       .then((response) => {
         this.setState({title: response.data.name});
       })
