@@ -7,7 +7,7 @@ var ImageCarousel = (props) => {
       <Div><button onClick = {props.onClickClose}>X Close</button></Div>
       <Div><span>{props.currentIndex + 1}/{props.images.length}</span></Div>
       <Div><button>Share</button><button onClick = {props.onClickFav}>Fav</button></Div>
-      <Div><button onClick = {props.goLeft}>Go Left</button></Div>
+      <Div>{props.currentIndex !== 0 ? <button onClick = {props.goLeft}>Go Left</button> : null}</Div>
       <ImgDiv>
         <Img src = {props.images[props.currentIndex].url}/>
       </ImgDiv>
