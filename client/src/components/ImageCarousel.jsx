@@ -11,7 +11,7 @@ var ImageCarousel = (props) => {
       <ImgDiv>
         <Img src = {props.images[props.currentIndex].url}/>
       </ImgDiv>
-      <Div><button onClick = {props.goRight}>Go Right</button></Div>
+      <Div>{props.currentIndex !== props.images.length - 1 ? <button onClick = {props.goRight}>Go Right</button> : null}</Div>
     </ImageCarouselContainer>
   );
 };
