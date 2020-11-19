@@ -8,7 +8,7 @@ var ImageCarousel = (props) => {
         <CloseButton onClick = {props.onClickClose}>X Close</CloseButton>
       </Div>
       <Div>
-        <span>{props.currentIndex + 1}/{props.images.length}</span>
+        <span>{props.currentIndex + 1} / {props.images.length}</span>
       </Div>
       <Div>
         <Button>
