@@ -19,13 +19,13 @@ var ImageCarousel = (props) => {
         </Button>
       </Div>
       <Div>
-        {props.currentIndex !== 0 ? <button onClick = {props.goLeft}>Go Left</button> : null}
+        {props.currentIndex !== 0 ? <NavArrowButton onClick = {props.goLeft}><NavArrow xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false"><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" fill-rule="evenodd"/></NavArrow></NavArrowButton> : null}
       </Div>
       <ImgDiv>
         <Img src = {props.images[props.currentIndex].url}/>
       </ImgDiv>
       <Div>
-        {props.currentIndex !== props.images.length - 1 ? <button onClick = {props.goRight}>Go Right</button> : null}
+        {props.currentIndex !== props.images.length - 1 ? <NavArrowButton onClick = {props.goRight}><NavArrow xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false"><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fill-rule="evenodd"/></NavArrow></NavArrowButton> : null}
       </Div>
     </ImageCarouselContainer>
   );
@@ -93,11 +93,29 @@ var CloseButton = styled(Button)`
   border-radius: 8px;
   background-color: rgba(34, 34, 34, 0.1);
   padding: 8px 16px;
-  filter: brightness(100%);
 }
 &:hover {
   cursor: pointer;
   background-color: rgba(34, 34, 34, 0.16);
+}
+`;
+
+var NavArrow = styled.svg`
+  height: 12px;
+  width: 12px;
+  display: block;
+  fill: currentcolor;
+`;
+
+var NavArrowButton = styled(Button)`
+& {
+  border-radius: 50%;
+  padding: 16px 16px;
+  border: 1px solid rgb(176, 176, 176)
+}
+&:hover {
+  cursor: pointer;
+  background-color: rgba(34, 34, 34, 0.04);
 }
 `;
 
