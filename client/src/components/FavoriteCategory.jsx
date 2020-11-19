@@ -35,6 +35,7 @@ var FavoriteCategoryContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.7);
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 `;
 
 var ModalContainer = styled.div`

@@ -42,6 +42,7 @@ var ImageCarouselContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
   grid-template-rows: 1fr 8fr;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
 `;
 
 var ImgDiv = styled.div`
@@ -94,7 +95,6 @@ var CloseButton = styled(Button)`
   border-radius: 8px;
   background-color: rgba(34, 34, 34, 0.1);
   padding: 8px 16px;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-weight: 500;
 }
 &:hover {
@@ -123,7 +123,6 @@ var NavArrowButton = styled(Button)`
 `;
 
 var Span = styled.span`
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-weight: 300;
 `;
 
