@@ -5,9 +5,23 @@ var FavoriteCategory = (props) => {
   return (
     <FavoriteCategoryContainer>
       <ModalContainer>
-        <Div><CloseButton onClick = {props.onClickDone}>x</CloseButton><Span>Save to a list</Span></Div>
-        <div><button>Create a new list</button></div>
-        <Div><Done onClick = {props.onClickDone}>Done</Done></Div>
+        <HeaderDiv>
+          <CloseButton onClick = {props.onClickDone}>
+            <CrossSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false"><path d="m6 6 20 20"/><path d="m26 6-20 20"/></CrossSvg>
+          </CloseButton>
+          <Span>Save to a list</Span>
+        </HeaderDiv>
+        <ContentDiv>
+          <ListItemDiv>
+            <NewListButton>
+              <PlusSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false"><path d="M28,17H17V28H15V17H4V15H15V4h2V15H28Z"/></PlusSvg>
+            </NewListButton>
+            <span>Create a new list</span>
+          </ListItemDiv>
+        </ContentDiv>
+        <DoneDiv>
+          <DoneButton onClick = {props.onClickDone}>Done</DoneButton>
+        </DoneDiv>
       </ModalContainer>
     </FavoriteCategoryContainer>
   );
@@ -30,27 +44,90 @@ var ModalContainer = styled.div`
   background-color: white;
   width: 570px;
   max-height: 900px;
-  text-align: center;
   border-radius: 15px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 64px 1fr 80px;
 `;
 
-var Div = styled.div`
- display: flex;
+var HeaderDiv = styled.div`
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(235, 235, 235);
 `;
 
 var CloseButton = styled.button`
-  justify-content: flex-start;
+  & {
+    border: none;
+    background: none;
+    outline: none;
+    margin-left: 15px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(34, 34, 34, 0.04);
+  }
 `;
 
 var Span = styled.span`
-  justify-self: center;
+  margin: auto;
 `;
 
-var Done = styled.button`
-  justify-self: flex-end;
+var DoneDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1px solid rgb(235, 235, 235);
+`;
+
+var DoneButton = styled.button`
+  & {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 14px 24px;
+    border-radius: 8px;
+    outline: none;
+    color: white;
+    margin-right: 20px;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 1);
+  }
+`;
+
+var NewListButton = styled(DoneButton)`
+  border-radius: 4px;
+  padding: 16px;
+`;
+
+var ContentDiv = styled.div`
+    margin: 30px;
+`;
+
+var ListItemDiv = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+var CrossSvg = styled.svg`
+  display: block;
+  fill: none;
+  height: 16px;
+  width: 16px;
+  stroke: currentcolor;
+  stroke-width: 3;
+  overflow: visible;
+`;
+
+var PlusSvg = styled.svg`
+  display: block;
+  height: 32px;
+  width: 32px;
+  fill: rgb(255, 255, 255);
 `;
 
 export default FavoriteCategory;
