@@ -5,7 +5,7 @@ var ImageCarousel = (props) => {
   return (
     <ImageCarouselContainer>
       <Div>
-        <button onClick = {props.onClickClose}>X Close</button>
+        <CloseButton onClick = {props.onClickClose}>X Close</CloseButton>
       </Div>
       <Div>
         <span>{props.currentIndex + 1}/{props.images.length}</span>
@@ -86,6 +86,19 @@ var Heart = styled.svg`
 var Button = styled.button`
   border: none;
   background: none;
+`;
+
+var CloseButton = styled(Button)`
+& {
+  border-radius: 8px;
+  background-color: rgba(34, 34, 34, 0.1);
+  padding: 8px 16px;
+  filter: brightness(100%);
+}
+&:hover {
+  cursor: pointer;
+  background-color: rgba(34, 34, 34, 0.16);
+}
 `;
 
 export default ImageCarousel;
