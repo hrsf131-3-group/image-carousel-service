@@ -5,11 +5,11 @@ var ImageCarousel = (props) => {
   return (
     <ImageCarouselContainer>
       <Div><button onClick = {props.onClickClose}>X Close</button></Div>
-      <Div><span>1/33</span></Div>
+      <Div><span>{props.currentIndex + 1}/{props.images.length}</span></Div>
       <Div><button>Share</button><button onClick = {props.onClickFav}>Fav</button></Div>
       <Div><button onClick = {props.goLeft}>Go Left</button></Div>
       <ImgDiv>
-        <Img src = {props.image.url}/>
+        <Img src = {props.images[props.currentIndex].url}/>
       </ImgDiv>
       <Div><button onClick = {props.goRight}>Go Right</button></Div>
     </ImageCarouselContainer>
