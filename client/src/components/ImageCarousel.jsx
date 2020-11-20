@@ -102,9 +102,17 @@ var Heart = styled.svg`
 `;
 
 var Button = styled.button`
-  border: none;
-  background: none;
-  outline:none;
+  & {
+    border-radius: 50%;
+    padding: 8px;
+    border: none;
+    background: none;
+    outline:none;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(34, 34, 34, 0.04);
+  }
 `;
 
 var CloseButton = styled(Button)`
