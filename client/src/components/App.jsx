@@ -88,7 +88,7 @@ class App extends React.Component {
 
         {this.state.showImageCarousel ? <ImageCarousel onClickClose = {this.onClickClose} onClickFav = {this.onClickFav} goRight = {this.goRight} goLeft = {this.goLeft} currentIndex = {this.state.currentIndex} images = {this.state.images}/> : null}
 
-        {this.state.showFavCategory ? <FavoriteCategory onClickDone = {this.onClickDone} favCategories = {this.state.favCategories}/> : null}
+        {this.state.showFavCategory ? <FavoriteCategory onClickDone = {this.onClickDone} favCategories = {this.state.favCategories} image = {this.state.images[0]}/> : null}
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 var ImageCarousel = (props) => {
+  var currentIndex = props.currentIndex;
   return (
     <ImageCarouselContainer>
       <Div>
@@ -22,7 +23,7 @@ var ImageCarousel = (props) => {
         {props.currentIndex !== 0 ? <NavArrowButton onClick = {props.goLeft}><NavArrow xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false"><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" fillRule="evenodd"/></NavArrow></NavArrowButton> : null}
       </Div>
       <ImgDiv>
-        <Img src = {props.images[props.currentIndex].url}/>
+        <Img src = {props.images[props.currentIndex].url} />
         <span>{props.images[props.currentIndex].description}</span>
       </ImgDiv>
       <Div>
@@ -53,6 +54,11 @@ var ImageCarouselContainer = styled.div`
   animation: ${Appear} 0.5s;
 `;
 
+var FadeIn = keyframes`
+  0% {opacity: 0; }
+  100% {opacity: 1;}
+`;
+
 var ImgDiv = styled.div`
   display: flex;
   overflow: hidden;
@@ -65,6 +71,8 @@ var Img = styled.img`
   max-height: 80%;
   max-width: 100%;
   margin-bottom: 30px;
+  animation-fill-mode: forwards;
+  animation: ${FadeIn} 1s;
 `;
 
 var Div = styled.div`

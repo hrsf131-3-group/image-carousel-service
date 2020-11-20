@@ -20,9 +20,7 @@ var FavoriteCategory = (props) => {
           </ListItemDiv>
           {props.favCategories.map((favCategory, index) =>
             <ListItemDiv key = {index}>
-              <NewListButton>
-                <PlusSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false"><path d="M28,17H17V28H15V17H4V15H15V4h2V15H28Z"/></PlusSvg>
-              </NewListButton>
+              <Img src = {props.image.url}/>
               <span>{favCategory.name}</span>
             </ListItemDiv>
           )}
@@ -148,6 +146,14 @@ var PlusSvg = styled.svg`
   height: 32px;
   width: 32px;
   fill: rgb(255, 255, 255);
+`;
+
+var Img = styled.img`
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 20px;
 `;
 
 export default FavoriteCategory;
