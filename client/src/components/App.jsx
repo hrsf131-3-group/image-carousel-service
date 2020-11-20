@@ -4,6 +4,7 @@ import Images from './Images.jsx';
 import Title from './Title.jsx';
 import ImageCarousel from './ImageCarousel.jsx';
 import FavoriteCategory from './FavoriteCategory.jsx';
+import ShareLike from './ShareLike.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -83,6 +84,8 @@ class App extends React.Component {
     return (
       <div>
         <Title title = {this.state.title} />
+
+        <ShareLike />
 
         {this.state.images.length !== 0 ? <Images images = {this.state.images} onClickImage = {this.onClickImage} /> : null}
 
