@@ -85,7 +85,7 @@ class App extends React.Component {
       <div>
         <Title title = {this.state.title} />
 
-        <ShareLike />
+        <ShareLike onClickFav = {this.onClickFav}/>
 
         {this.state.images.length !== 0 ? <Images images = {this.state.images} onClickImage = {this.onClickImage} /> : null}
 

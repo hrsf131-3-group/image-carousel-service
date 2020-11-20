@@ -58,7 +58,7 @@ var Heart = styled.svg`
 var Span = styled.span`
   text-decoration: underline;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
 `;
 
 export default ShareLike;
