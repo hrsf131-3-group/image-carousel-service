@@ -34,7 +34,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Title title = {this.state.title}/>
+        <Title title = "hello"/>
         <Images images = {this.state.images}/>
       </div>
     );
