@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 var FavoriteCategory = (props) => {
   return (
@@ -33,6 +33,11 @@ var FavoriteCategory = (props) => {
   );
 };
 
+var Appear = keyframes`
+  0% { top: 100%; opacity: 0; }
+  100% { top: calc(50% - 360px/2); opacity: 1;}
+`;
+
 var FavoriteCategoryContainer = styled.div`
   position: absolute;
   top: 0;
@@ -42,6 +47,7 @@ var FavoriteCategoryContainer = styled.div`
   height: 100%;
   background-color: rgba(0,0,0,0.7);
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  overflow: hidden;
 `;
 
 var ModalContainer = styled.div`
@@ -55,6 +61,8 @@ var ModalContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 64px 1fr 80px;
+  animation-fill-mode: forwards;
+  animation: ${Appear} 0.6s;
 `;
 
 var HeaderDiv = styled.div`
