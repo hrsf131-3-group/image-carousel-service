@@ -4,12 +4,12 @@ import styled from 'styled-components';
 var Images = (props) => {
   return (
     <ImageGrid>
-      <Img1 src = {props.images[0].url} onClick = {() => props.onClickImage(0)}/>
-      <Img2 src = {props.images[1].url} onClick = {() => props.onClickImage(1)}/>
-      <Img3 src = {props.images[2].url} onClick = {() => props.onClickImage(2)}/>
-      <Img4 src = {props.images[3].url} onClick = {() => props.onClickImage(3)}/>
-      <Img5 src = {props.images[4].url} onClick = {() => props.onClickImage(4)}/>
-      <Button>
+      <Img1 src = {props.images[0].url} onClick = {() => props.onClickShowImage(0)}/>
+      <Img2 src = {props.images[1].url} onClick = {() => props.onClickShowImage(1)}/>
+      <Img3 src = {props.images[2].url} onClick = {() => props.onClickShowImage(2)}/>
+      <Img4 src = {props.images[3].url} onClick = {() => props.onClickShowImage(3)}/>
+      <Img5 src = {props.images[4].url} onClick = {() => props.onClickShowImage(4)}/>
+      <Button onClick = {() => props.onClickShowImage(0)}>
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" role="presentation" aria-hidden="true" focusable="false"><circle cx="1.5" cy="1.5" r="1.5"/><circle cx="1.5" cy="8.5" r="1.5"/><circle cx="8.5" cy="1.5" r="1.5"/><circle cx="8.5" cy="8.5" r="1.5"/><circle cx="15.5" cy="1.5" r="1.5"/><circle cx="15.5" cy="8.5" r="1.5"/><circle cx="1.5" cy="15.5" r="1.5"/><circle cx="8.5" cy="15.5" r="1.5"/><circle cx="15.5" cy="15.5" r="1.5"/></Svg>Show all photos</Button>
     </ImageGrid>
   );
@@ -72,6 +72,7 @@ var Button = styled.button`
     cursor: pointer;
     border-radius: 8px;
     font-weight: 500;
+    outline:none;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   }
 

@@ -19,7 +19,7 @@ class App extends React.Component {
       listingId: Math.floor(Math.random() * 100) + 1,
       favCategories: []
     };
-    this.onClickImage = this.onClickImage.bind(this);
+    this.onClickShowImage = this.onClickShowImage.bind(this);
     this.onClickClose = this.onClickClose.bind(this);
     this.onClickFav = this.onClickFav.bind(this);
     this.onClickDone = this.onClickDone.bind(this);
@@ -27,7 +27,7 @@ class App extends React.Component {
     this.goLeft = this.goLeft.bind(this);
   }
 
-  onClickImage(index) {
+  onClickShowImage(index) {
     this.setState({showImageCarousel: true, currentIndex: index});
   }
 
@@ -87,7 +87,7 @@ class App extends React.Component {
 
         <ShareLike onClickFav = {this.onClickFav}/>
 
-        {this.state.images.length !== 0 ? <Images images = {this.state.images} onClickImage = {this.onClickImage} /> : null}
+        {this.state.images.length !== 0 ? <Images images = {this.state.images} onClickShowImage = {this.onClickShowImage} /> : null}
 
         {this.state.showImageCarousel ? <ImageCarousel onClickClose = {this.onClickClose} onClickFav = {this.onClickFav} goRight = {this.goRight} goLeft = {this.goLeft} currentIndex = {this.state.currentIndex} images = {this.state.images}/> : null}
 
