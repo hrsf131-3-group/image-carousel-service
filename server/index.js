@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.use('/api', router);
 
-let port = 3000;
+let port = 3001;
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);

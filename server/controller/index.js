@@ -1,6 +1,7 @@
 var model = require(__dirname + '/../../db/model');
 
 var getPhotos = (req, res) => {
+  console.log('photos');
   var id = req.params.id;
   model.getPhotos(id)
     .then((response) => {
@@ -12,8 +13,8 @@ var getPhotos = (req, res) => {
 };
 
 var getCategories = (req, res) => {
-  var id = parseInt(req.params.id);
-  var listingId = parseInt(req.query.listing_id);
+  var id = parseInt(req.query.user_id);
+  var listingId = parseInt(req.params.id);
   var promise1 = model.getCategories(id);
   var promise2 = model.checkIfListingIsFav(id);
   Promise.all([promise1, promise2])
