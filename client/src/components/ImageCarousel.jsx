@@ -37,13 +37,13 @@ var ImageCarousel = (props) => {
 var ImageCarouselContainer = styled.div`
   top: ${props => props.showImageCarousel ? '0' : '100%'};
   opacity: ${props => props.showImageCarousel ? '1' : '0'};
+  z-index: ${props => props.showImageCarousel ? '1' : '-1'};
   position: absolute;
   left: 0px;
-  z-index: 1;
   width: 100%;
   height: 100%;
   background-color: white;
-  transition: all 0.6s;
+  transition: top 0.6s, opacity 0.5s, z-index 0.6s;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
 `;
 

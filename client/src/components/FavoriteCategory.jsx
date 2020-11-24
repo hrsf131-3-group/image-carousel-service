@@ -36,7 +36,7 @@ var FavoriteCategory = (props) => {
 };
 
 var FavoriteCategoryContainer = styled.div`
-  z-index: 2;
+  // z-index: ${props => props.showFavCategory ? '2' : '-1'};
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   overflow: hidden;
 `;
@@ -44,18 +44,19 @@ var FavoriteCategoryContainer = styled.div`
 var FavoriteCategoryBackground = styled.div`
   position: absolute;
   display: ${props => props.showFavCategory ? 'block' : 'none'};
-  z-index: 2;
+  z-index: ${props => props.showFavCategory ? '1' : '-1'};
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.7);
   overflow: hidden;
+  transition: z-index 0.6s;
 `;
 
 var ModalContainer = styled.div`
   position: absolute;
-  z-index: 2;
+  z-index: ${props => props.showFavCategory ? '10' : '-1'};
   top: ${props => props.showFavCategory ? 'calc(50% - 360px/2)' : 'calc(100% - 360px)'};
   opacity: ${props => props.showFavCategory ? '1' : '0'};
   left: calc(50% - 570px/2);
@@ -66,7 +67,7 @@ var ModalContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 64px 1fr 80px;
-  transition: all 0.6s;
+  transition: top 0.6s, opacity 0.5s, z-index 0.6s;
 `;
 
 var HeaderDiv = styled.div`
