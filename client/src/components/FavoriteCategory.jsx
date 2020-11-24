@@ -23,7 +23,7 @@ var FavoriteCategory = (props) => {
             <ListItemDiv key = {index}>
               <Img src = {props.image.url}/>
               <span>{favCategory.name}</span>
-              <Heart xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false"><path d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"/></Heart>
+              <Heart onClick = {props.onHeartClick} isFav = {props.isFav} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false"><path d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"/></Heart>
             </ListItemDiv>
           )}
         </ContentDiv>
@@ -43,7 +43,7 @@ var FavoriteCategoryContainer = styled.div`
 var FavoriteCategoryBackground = styled.div`
   position: absolute;
   display: ${props => props.showFavCategory ? 'block' : 'none'};
-  z-index: ${props => props.showFavCategory ? '1' : '-1'};
+  z-index: ${props => props.showFavCategory ? '2' : '-1'};
   top: 0;
   left: 0;
   width: 100%;
@@ -168,10 +168,10 @@ var Img = styled.img`
 `;
 
 var Heart = styled.svg`
-  fill: rgb(255, 56, 92);
+  fill: ${props => props.isFav ? 'rgb(255, 56, 92)' : 'white'};
   height: 24px;
   width: 24px;
-  stroke: rgb(255, 56, 92);
+  stroke: ${props => props.isFav ? 'rgb(255, 56, 92)' : 'rgb(34, 34, 34)'};
   stroke-width: 2;
   overflow: visible;
   margin-left: 320px;

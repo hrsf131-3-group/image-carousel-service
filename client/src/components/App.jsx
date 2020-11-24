@@ -14,6 +14,7 @@ class App extends React.Component {
       title: '',
       showImageCarousel: false,
       showFavCategory: false,
+      isFav: true,
       currentIndex: 0,
       // generating random id to get a different listing
       listingId: Math.floor(Math.random() * 100) + 1,
@@ -23,6 +24,7 @@ class App extends React.Component {
     this.onClickClose = this.onClickClose.bind(this);
     this.onClickFav = this.onClickFav.bind(this);
     this.onClickDone = this.onClickDone.bind(this);
+    this.onHeartClick = this.onHeartClick.bind(this);
     this.goRight = this.goRight.bind(this);
     this.goLeft = this.goLeft.bind(this);
   }
@@ -52,6 +54,10 @@ class App extends React.Component {
 
   onClickDone() {
     this.setState({showFavCategory: false});
+  }
+
+  onHeartClick() {
+    this.setState({isFav: !this.state.isFav});
   }
 
   goRight() {
@@ -90,7 +96,7 @@ class App extends React.Component {
 
         {this.state.images.length !== 0 ? <ImageCarousel onClickClose = {this.onClickClose} onClickFav = {this.onClickFav} goRight = {this.goRight} goLeft = {this.goLeft} currentIndex = {this.state.currentIndex} images = {this.state.images} showImageCarousel = {this.state.showImageCarousel}/> : null}
 
-        {this.state.images.length !== 0 ? <FavoriteCategory onClickDone = {this.onClickDone} favCategories = {this.state.favCategories} image = {this.state.images[0]} showFavCategory = {this.state.showFavCategory}/> : null}
+        {this.state.images.length !== 0 ? <FavoriteCategory onClickDone = {this.onClickDone} favCategories = {this.state.favCategories} image = {this.state.images[0]} showFavCategory = {this.state.showFavCategory} onHeartClick = {this.onHeartClick} isFav = {this.state.isFav}/> : null}
       </div>
     );
   }
