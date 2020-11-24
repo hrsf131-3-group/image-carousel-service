@@ -1,10 +1,10 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 var FavoriteCategory = (props) => {
   return (
-    <FavoriteCategoryContainer>
-      <ModalContainer>
+    <FavoriteCategoryContainer showFavCategory = {props.showFavCategory}>
+      <ModalContainer showFavCategory = {props.showFavCategory}>
         <HeaderDiv>
           <CloseButton onClick = {props.onClickDone}>
             <CrossSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false"><path d="m6 6 20 20"/><path d="m26 6-20 20"/></CrossSvg>
@@ -34,14 +34,9 @@ var FavoriteCategory = (props) => {
   );
 };
 
-var Appear = keyframes`
-  0% { top: 100%; opacity: 0; }
-  100% { top: calc(50% - 360px/2); opacity: 1;}
-`;
-
 var FavoriteCategoryContainer = styled.div`
+  top: ${props => props.showFavCategory ? '0' : '100%'};
   position: absolute;
-  top: 0;
   left: 0;
   z-index: 2;
   width: 100%;
@@ -53,7 +48,8 @@ var FavoriteCategoryContainer = styled.div`
 
 var ModalContainer = styled.div`
   position: absolute;
-  top: calc(50% - 360px/2);
+  top: ${props => props.showFavCategory ? 'calc(50% - 360px/2)' : '100%'};
+  opacity: ${props => props.showFavCategory ? '1' : '0'};
   left: calc(50% - 570px/2);
   background-color: white;
   width: 570px;
@@ -62,8 +58,7 @@ var ModalContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 64px 1fr 80px;
-  animation-fill-mode: forwards;
-  animation: ${Appear} 0.6s;
+  transition: all 0.6s;
 `;
 
 var HeaderDiv = styled.div`
