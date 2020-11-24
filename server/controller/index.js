@@ -1,7 +1,6 @@
 var model = require(__dirname + '/../../db/model');
 
 var getPhotos = (req, res) => {
-  console.log('photos');
   var id = req.params.id;
   model.getPhotos(id)
     .then((response) => {
