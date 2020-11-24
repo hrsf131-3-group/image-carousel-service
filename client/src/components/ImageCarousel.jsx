@@ -34,22 +34,16 @@ var ImageCarousel = (props) => {
   );
 };
 
-var Appear = keyframes`
-  0% { top: 100%; opacity: 0; }
-  100% { top: 0; opacity: 1; }
-`;
-
 var ImageCarouselContainer = styled.div`
-  display: ${props => props.showImageCarousel ? 'block' : 'none'};
+  top: ${props => props.showImageCarousel ? '0' : '100%'};
+  opacity: ${props => props.showImageCarousel ? '1' : '0'};
   position: absolute;
   left: 0px;
-  top: 0px;
   z-index: 1;
   width: 100%;
   height: 100%;
   background-color: white;
-  animation-fill-mode: forwards;
-  animation: ${Appear} 0.5s;
+  transition: all 0.6s;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
 `;
 
@@ -78,8 +72,8 @@ var Img = styled.img`
   max-height: 80%;
   max-width: 100%;
   margin-bottom: 30px;
-  animation-fill-mode: forwards;
-  animation: ${FadeIn} 1s;
+  // animation-fill-mode: forwards;
+  // animation: ${FadeIn} 1s;
 `;
 
 var Div = styled.div`
