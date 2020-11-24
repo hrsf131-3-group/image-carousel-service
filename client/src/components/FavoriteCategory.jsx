@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 var FavoriteCategory = (props) => {
   return (
-    <FavoriteCategoryContainer showFavCategory = {props.showFavCategory}>
+    <FavoriteCategoryContainer>
+      <FavoriteCategoryBackground showFavCategory = {props.showFavCategory} />
       <ModalContainer showFavCategory = {props.showFavCategory}>
         <HeaderDiv>
           <CloseButton onClick = {props.onClickDone}>
@@ -35,20 +36,27 @@ var FavoriteCategory = (props) => {
 };
 
 var FavoriteCategoryContainer = styled.div`
-  top: ${props => props.showFavCategory ? '0' : '100%'};
-  position: absolute;
-  left: 0;
   z-index: 2;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+  overflow: hidden;
+`;
+
+var FavoriteCategoryBackground = styled.div`
+  position: absolute;
+  display: ${props => props.showFavCategory ? 'block' : 'none'};
+  z-index: 2;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.7);
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   overflow: hidden;
 `;
 
 var ModalContainer = styled.div`
   position: absolute;
-  top: ${props => props.showFavCategory ? 'calc(50% - 360px/2)' : '100%'};
+  z-index: 2;
+  top: ${props => props.showFavCategory ? 'calc(50% - 360px/2)' : 'calc(100% - 360px)'};
   opacity: ${props => props.showFavCategory ? '1' : '0'};
   left: calc(50% - 570px/2);
   background-color: white;
