@@ -43,7 +43,7 @@ var ImageCarouselContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: white;
-  transition: top 0.6s, opacity 0.5s, z-index 0.6s;
+  transition: all 0.6s;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
 `;
 
