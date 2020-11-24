@@ -5,6 +5,7 @@ import Title from './Title.jsx';
 import ImageCarousel from './ImageCarousel.jsx';
 import FavoriteCategory from './FavoriteCategory.jsx';
 import ShareLike from './ShareLike.jsx';
+import Header from './Header.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -88,6 +89,8 @@ class App extends React.Component {
   render () {
     return (
       <div>
+        <Header />
+
         <Title title = {this.state.title} />
 
         <ShareLike onClickFav = {this.onClickFav} isFav = {this.state.isFav}/>
