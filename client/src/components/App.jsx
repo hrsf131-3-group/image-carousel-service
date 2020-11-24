@@ -42,7 +42,6 @@ class App extends React.Component {
       }
     })
       .then((response) => {
-        console.log(response.data.fav_categories);
         this.setState({favCategories: response.data.fav_categories});
       })
       .catch((err) => {
