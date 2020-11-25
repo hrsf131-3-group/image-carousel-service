@@ -1,6 +1,8 @@
+var compression = require('compression');
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+app.use(compression({threshold: 0}));
 var router = require('./router');
 
 var publicDirectory = __dirname + '/../client/dist';

@@ -9,12 +9,13 @@
   },
   "scripts": {
     "start": "nodemon server/index.js",
-    "react-dev": "webpack -d --watch",
+    "react-dev": "webpack --watch",
     "seed": "node db/seed.js"
   },
   "dependencies": {
     "axios": "^0.21.0",
     "bluebird": "^3.7.2",
+    "compression": "^1.7.4",
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "mongoose": "^5.10.13",
@@ -22,7 +23,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sequelize": "^6.3.5",
-    "webpack": "^2.7.0"
+    "webpack": "^4.44.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
