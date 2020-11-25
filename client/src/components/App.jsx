@@ -41,7 +41,7 @@ class App extends React.Component {
   onClickFav() {
     axios.get(`/api/listings/${this.state.listingId}/fav_categories`, {
       params: {
-        'user_id': 3
+        'user_id': 22
       }
     })
       .then((response) => {
