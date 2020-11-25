@@ -16,15 +16,18 @@ var ShareLike = (props) => {
 };
 
 var Img = styled.img`
-  width: 500px;
-  margin-right: 32%;
+  position: absolute;
+  left: -4px;
+  width: 460px;
 `;
 
 var Div = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-right: 20%;
+  margin-left: 20%;
 `;
 
 var Button = styled.button`

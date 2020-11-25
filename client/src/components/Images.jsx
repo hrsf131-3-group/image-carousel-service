@@ -22,7 +22,7 @@ var ImageGrid = styled.div`
   grid-template-rows: 1fr 1fr;
   grid-gap: 8px;
   width: 60%;
-  margin: 10px auto;
+  margin: 15px auto;
   height: 520px;
   overflow: hidden;
   border-radius: 12px;

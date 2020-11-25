@@ -13,7 +13,7 @@ var Title = (props) => {
 };
 
 var TitleHeading = styled.h2`
-  margin: 10px 0 0 20%;
+  margin: 10px 0 5px 20%;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-weight: 500;
 `;
