@@ -130,6 +130,7 @@ var ContentDiv = styled.div`
 
 var ListItemDiv = styled.div`
 & {
+  position: relative;
   display: flex;
   align-items: center;
   border-radius: 8px;
@@ -168,6 +169,8 @@ var Img = styled.img`
 `;
 
 var Heart = styled.svg`
+  position: absolute;
+  right: 15px;
   fill: ${props => props.isFav ? 'rgb(255, 56, 92)' : 'white'};
   height: 24px;
   width: 24px;
