@@ -11,7 +11,7 @@ var seedPhotos = (n) => {
     .then(() => {
       var values = [];
       var photoId = 1;
-      var photoSet = [[1, 20], [21, 30], [31, 53]];
+      var photoSet = [[1, 20], [21, 30], [31, 53], [54, 63]];
       for (var listingId = 1; listingId <= totalListings; listingId++) {
         var setNum = Math.floor(Math.random() * photoSet.length);
         for (var i = photoSet[setNum][0]; i <= photoSet[setNum][1]; i++) {
