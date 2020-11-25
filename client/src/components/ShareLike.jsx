@@ -52,6 +52,8 @@ var Share = styled.svg`
   stroke-width: 2;
   overflow: visible;
   padding-right: 8px;
+  position: relative;
+  top: 2px;
 `;
 
 var Heart = styled.svg`
@@ -62,6 +64,8 @@ var Heart = styled.svg`
   stroke-width: 2;
   overflow: visible;
   padding-right: 8px;
+  position: relative;
+  top: 2px;
 `;
 
 var Span = styled.span`
