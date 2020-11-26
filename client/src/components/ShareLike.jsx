@@ -17,7 +17,7 @@ var ShareLike = (props) => {
 
 var Img = styled.img`
   position: absolute;
-  left: -4px;
+  left: -5px;
   width: 460px;
 `;
 
