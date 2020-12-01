@@ -10,12 +10,16 @@ var seedPhotos = (n) => {
   db.connection.queryAsync('DELETE FROM photos')
     .then(() => {
       var values = [];
-      for (var i = 1; i <= n; i++) {
-        var num = Math.floor(Math.random() * 37) + 1;
-        var url = `https://shailee-fec-photos.s3-us-west-1.amazonaws.com/fec_photos/home${num}.jpg`;
-        var description = faker.lorem.sentence();
-        var listingId = Math.floor(Math.random() * totalListings) + 1;
-        values.push([i, url, description, listingId]);
+      var photoId = 1;
+      var photoSet = [[1, 20], [21, 30], [31, 53], [54, 63]];
+      for (var listingId = 1; listingId <= totalListings; listingId++) {
+        var setNum = Math.floor(Math.random() * photoSet.length);
+        for (var i = photoSet[setNum][0]; i <= photoSet[setNum][1]; i++) {
+          var url = `https://shailee-fec-photos.s3-us-west-1.amazonaws.com/fec_photos/photo${i}.webp`;
+          var description = faker.lorem.sentence();
+          values.push([photoId, url, description, listingId]);
+          photoId++;
+        }
       }
       var query = 'INSERT INTO photos (id, url, description, listing_id) VALUES ?';
       return db.connection.queryAsync(query, [values]);

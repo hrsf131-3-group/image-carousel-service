@@ -1,13 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
+
 
 var Title = (props) => {
   return (
     <div>
-      <h2>
+      <TitleHeading>
         {props.title}
-      </h2>
+      </TitleHeading>
     </div>
   );
 };
+
+var TitleHeading = styled.h2`
+  margin: 10px 0 5px 20%;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-weight: 500;
+`;
 
 export default Title;
