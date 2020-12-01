@@ -38,7 +38,7 @@ var ImageCarouselContainer = styled.div`
   top: ${props => props.showImageCarousel ? '0' : '100%'};
   opacity: ${props => props.showImageCarousel ? '1' : '0'};
   z-index: ${props => props.showImageCarousel ? '1' : '-1'};
-  position: absolute;
+  position: fixed;
   left: 0px;
   width: 100%;
   height: 100%;
