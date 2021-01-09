@@ -1,39 +1,52 @@
-# Project Name
+# Rest-n-React
 
-> Project description
-
-## Related Projects
-
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+> SERN vacation rental booking service
 
 ## Table of Contents
 
-1. [Usage](#Usage)
 1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> Some usage instructions
+2. [Usage](#Usage)
 
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
-- Node 6.13.0
-- etc
+- Node 12.13.0
 
-## Development
+
+## Usage
 
 ### Installing Dependencies
 
 From within the root directory:
 
-```sh
-npm install -g webpack
+```
 npm install
 ```
+
+### Starting the app
+
+From within the root directory:
+
+```
+npm run start
+npm run react-dev
+```
+
+### Running tests
+
+From within the root directory:
+
+```
+npm run test
+```
+
+### Seeding data
+
+From within the root directory:
+
+```
+npm run seed
+```
+
 
